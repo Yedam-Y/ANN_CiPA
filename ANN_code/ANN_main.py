@@ -21,13 +21,13 @@ import pandas as pd
 import seaborn as sb 
 
 
-file_directory = 'C:/Users/CML_Ye/OneDrive - 금오공과대학교/바탕 화면/data/2020/average/training/'
+file_directory = 'C:/Users//data/2020/average/training/'
 file_ID = os.listdir(file_directory)
 
 
 
 
-val_directory = 'C:/Users/CML_Ye/OneDrive - 금오공과대학교/바탕 화면/data/2020/average/validation/'
+val_directory = 'C:/Users/data/2020/average/validation/'
 val_ID = os.listdir(val_directory)
  
 
@@ -60,7 +60,7 @@ def Model_Train(file_directory, sc, file_ID, epochs, batch_size, n_split):
         X_train, X_test, y_train, y_test = train_test_split(train, train_y,random_state =100, test_size=0.1)
 
      
-        Model_path = 'C:/Users/CML_Ye/'
+        Model_path = 'C:/Users/model/'
         
         if not os.path.exists(Model_path):
             os.mkdir(Model_path)
@@ -105,7 +105,7 @@ train_model = Model_Train(file_directory, sc = sc, file_ID = file_ID, epochs = 3
 
 Label = ['low', 'inter', 'high']
 
-model = tf.keras.models.load_model('C:/Users/CML_Ye/OneDrive - 금오공과대학교/문서/Model/0-28-0.4832-0.7579-valid-0.4472-0.7900-Model.hdf5')
+model = tf.keras.models.load_model('C:/Users/Model/0-28-0.4832-0.7579-valid-0.4472-0.7900-Model.hdf5')
 model.summary()
 model.compile(loss = 'sparse_categorical_crossentropy', optimizer = 'adam', metrics = ['accuracy'])
 
